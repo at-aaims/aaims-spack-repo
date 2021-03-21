@@ -1,0 +1,112 @@
+packages:
+  # Core externals
+  rapidjson: 
+    buildable: false
+    externals:
+    - spec: rapidjson@latest
+      modules:
+      - rapidjson/latest
+  cmake:
+    buildable: false
+    externals:
+    - spec: cmake@3.18.2
+      modules:
+      - cmake/3.18.2
+  go:
+    buildable: false
+    externals:
+    - spec: go@1.11
+      modules:
+      - go/1.11
+  python:
+    buildable: false
+    externals:
+    - spec: python@3.7.0
+      modules:
+      - python/3.7.0
+  git:
+    buildable: false
+    externals:
+    - spec: git@2.20.1
+      modules:
+      - git/2.20.1
+  makedepend:
+    buildable: false
+    externals:
+    - spec: makedepend@1.0.5
+      modules:
+      - makedepend/1.0.5
+  openssl:
+    buildable: false
+    version: [1.0.2,system, local]
+    externals:
+    - spec: openssl@1.0.2
+      modules:
+      - openssl/1.0.2
+    - spec: openssl@system
+      prefix: /false/path
+    - spec: openssl@local
+      prefix: /usr
+  serf:
+    providers:
+      openssl: [openssl@local]
+  cuda:
+    buildable: false
+    version: [10.1.243,10.2.89]
+    externals:
+    - spec: cuda@10.1.243
+      modules:
+      - cuda/10.1.234
+    - spec: cuda@10.2.89
+      modules:
+      - cuda/10.2.89
+  spectrum-mpi:
+    buildable: false
+    version: [10.3.1.2-20200121]
+    externals:
+    - spec: spectrum-mpi@10.3.1.2-20200121
+      modules:
+      - spectrum-mpi/10.3.1.2-20200121
+  # Defaults
+  fftw:
+    variants: +float+long_double+openmp
+  openmpi:
+    version: [2.1.1]
+    variants: +ucx+mxm+cuda
+  magma:
+    variants: ~fermi+kepler+maxwell
+  py-numpy:
+    version: [1.11.2]
+    variants: +blas+lapack+fftw
+  boost:
+    version:
+    - 1.66.0
+    - 1.61.0
+    - 1.59.0
+
+  petsc:
+    variants: +mumps+mpi~int64
+    providers:
+      scalapack: [olcf.netlib-scalapack]
+  mumps:
+    version: [5.0.1]
+    variants: +mpi
+    providers:
+      scalapack: [olcf.netlib-scalapack]
+  hypre:
+    variants: +openmp~internal-superlu+shared
+  netlib-scalapack:
+    variants: +fpic
+  hdf5:
+    variants: +cxx+fortran
+  netcdf:
+    variants: ~hdf4+mpi+parallel-netcdf+shared
+  parallel-netcdf:
+    variants: +cxx+fortran+fpic
+  all:
+    compiler: [gcc@6.4.0, gcc@4.8.5, gcc, pgi, clang, xl]
+    providers:
+      mpi: [spectrum-mpi]
+      lapack: [olcf.netlib-lapack]
+      blas: [olcf.netlib-lapack]
+      scalapack: [olcf.netlib-scalapack]

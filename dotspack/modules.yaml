@@ -1,0 +1,5 @@
+modules:
+  tcl:
+     hash_length: 0
+     naming_scheme: '{name}/{version}'
+     

@@ -1,0 +1,18 @@
+config:
+    install_tree: /sw/aaims
+    module_roots:
+        tcl:    /sw/aaims/spack/modules
+        lmod:   /sw/aaims/spack/lmod
+
+    # If this is false, tools like curl that use SSL will not verify
+    # certifiates. (e.g., curl will use use the -k option)
+    verify_ssl: true
+
+
+    # If set to true, Spack will always check checksums after downloading
+    # archives. If false, Spack skips the checksum step.
+    checksum: true
+
+    # If set to true, `spack install` and friends will NOT clean
+    # potentially harmful variables from the build environment. Use wisely.
+    dirty: false
