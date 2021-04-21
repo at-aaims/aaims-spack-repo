@@ -1,0 +1,20 @@
+--- spack-src/CMakeLists.orig	2021-04-21 13:20:31.286333709 -0400
++++ spack-src/CMakeLists.txt	2021-04-21 13:22:29.092076048 -0400
+@@ -50,7 +50,7 @@
+ endif(CCACHE_FOUND)
+ 
+ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native -Wall -Wextra -Werror")
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra")
+     if (RAPIDJSON_BUILD_CXX11)
+         if (CMAKE_CXX_COMPILER_VERSION VERSION_LESS "4.7.0")
+             set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
+@@ -73,7 +73,7 @@
+         endif()
+     endif()
+ elseif (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native -Wall -Wextra -Werror -Wno-missing-field-initializers")
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wno-missing-field-initializers")
+     if (RAPIDJSON_BUILD_CXX11)
+         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+     endif()
