@@ -1,0 +1,105 @@
+compilers:
+- compiler:
+    spec: cce@11.0.4
+    paths:
+      cc: cc
+      cxx: CC
+      f77: ftn
+      fc: ftn
+    flags: {}
+    operating_system: sles15
+    target: any
+    modules:
+    - PrgEnv-cray
+    - cce/11.0.4
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: gcc@9.3.0
+    paths:
+      cc: cc
+      cxx: CC
+      f77: ftn
+      fc: ftn
+    flags: {}
+    operating_system: sles15
+    target: any
+    modules:
+    - PrgEnv-gnu
+    - gcc/9.3.0
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: gcc@10.2.0
+    paths:
+      cc: cc
+      cxx: CC
+      f77: ftn
+      fc: ftn
+    flags: {}
+    operating_system: sles15
+    target: any
+    modules:
+    - PrgEnv-gnu
+    - gcc/10.2.0
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: gcc@8.1.0
+    paths:
+      cc: cc
+      cxx: CC
+      f77: ftn
+      fc: ftn
+    flags: {}
+    operating_system: sles15
+    target: any
+    modules:
+    - PrgEnv-gnu
+    - gcc/8.1.0
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: gcc@9.3.0
+    paths:
+      cc: cc
+      cxx: CC
+      f77: ftn
+      fc: ftn
+    flags: {}
+    operating_system: sles15
+    target: any
+    modules:
+    - PrgEnv-gnu
+    - gcc/9.3.0
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: gcc@10.2.0
+    paths:
+      cc: cc
+      cxx: CC
+      f77: ftn
+      fc: ftn
+    flags: {}
+    operating_system: sles15
+    target: any
+    modules:
+    - PrgEnv-gnu
+    - gcc/10.2.0
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: aocc@3.0.0
+    paths:
+      cc: clang 
+      cxx: clang++
+      f77: ftn
+      fc: ftn
+    flags: {}
+    operating_system: sles15
+    target: any
+    modules:
+    - aocc/3.0.0 
+    environment: {}
+    extra_rpaths: []

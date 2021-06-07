@@ -1,0 +1,37 @@
+packages:
+  # Core externals
+  #  rapidjson: 
+  #  buildable: false
+  #  externals:
+  #  - spec: rapidjson@latest
+  #    modules:
+  #    - rapidjson/latest
+ cmake:
+    buildable: false
+    externals:
+    - spec: cmake@3.20.2
+      modules:
+      - cmake/3.20.2
+ gdbm:
+   buildable: false
+   externals:
+   - spec: gdbm@1.19
+     modules:
+     - gdbm/1.19
+ perl:
+   buildable: false
+   externals:
+   - spec: perl@5.32.1
+     modules:
+     - perl/5.32.1
+ cray-mpich:
+   buildable: false
+   externals:
+   - spec: cray-mpich@8.1.4
+     modules:
+     - cray-mpich/8.1.4
+ all:
+   compiler: [cce, gcc@10.2.0]
+   providers:
+     mpi: [cray-mpich]
+     target: [zen2]

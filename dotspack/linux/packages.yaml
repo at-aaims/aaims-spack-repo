@@ -6,12 +6,21 @@ packages:
   #  - spec: rapidjson@latest
   #    modules:
   #    - rapidjson/latest
+  jdk:
+    buildable: false
+    externals:
+    - spec: jdk@11
+      modules:
+      - openjdk/11
+    - spec: jdk@9
+      modules:
+      - openjdk/9
   cmake:
     buildable: false
     externals:
-    - spec: cmake@3.18.2
+    - spec: cmake@3.20.2
       modules:
-      - cmake/3.18.2
+      - cmake/3.20.2
   go:
     buildable: false
     externals:
@@ -19,11 +28,18 @@ packages:
       modules:
       - go/1.11
   python:
+    buildable: true 
+    externals:
+    - spec: python@3.8.6
+      modules:
+      - python/3.8.6
+  py-numpy:
     buildable: false
     externals:
-    - spec: python@3.8.8
+    - spec: py-numpy 
       modules:
-      - python/3.8.8
+        - py-numpy/1.19.4
+
   git:
     buildable: false
     externals:
